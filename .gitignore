@@ -1,0 +1,164 @@
+# =============================================================================
+# Parallax — .gitignore
+#
+# Ordering matters. Section 1 is the licence-critical one: model artefacts must
+# never enter history. A weight file committed once and deleted later is still
+# in the pack files and still distributed on clone.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# 1. MODEL WEIGHTS, ADAPTERS AND TOKENIZERS  --  NEVER COMMIT
+#    These carry third-party licences (Llama Community Licence, etc.) that are
+#    incompatible with this repo's Apache-2.0 / CC0 terms. See NOTICE.
+# -----------------------------------------------------------------------------
+shared/model_weights/
+models/
+adapters/
+checkpoints/
+**/adapters/
+**/checkpoints/
+*.safetensors
+*.gguf
+*.ggml
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.npz
+*.mlpackage/
+tokenizer.json
+tokenizer.model
+tokenizer_config.json
+special_tokens_map.json
+# Model cards / configs that ship with third-party weights
+**/model_weights/**/config.json
+
+# Local model caches
+.cache/huggingface/
+.cache/mlx/
+~/.ollama/
+
+# -----------------------------------------------------------------------------
+# 1b. BOOK MANUSCRIPT  --  NEVER COMMIT TO THE PUBLIC REPO
+#     Chapter drafts live in a separate private repository. Publishing them
+#     here under any Creative Commons licence would be irrevocable, and would
+#     complicate a publishing agreement later. Draft locally if you like; do
+#     not push.
+# -----------------------------------------------------------------------------
+book/
+manuscript/
+chapters/
+**/*.chapter.md
+
+# -----------------------------------------------------------------------------
+# 2. LARGE OR REGENERABLE EXPERIMENT ARTEFACTS
+#    Keep configs, summary CSVs and written conclusions. Drop raw dumps.
+# -----------------------------------------------------------------------------
+experiments/raw/
+experiments/**/*.jsonl
+experiments/hardware_snapshots/*.raw.json
+reports/**/*.pdf
+*.log
+*.trace
+*.perf
+profile-*.json
+
+# Keep these despite the rules above.
+# Golden reference outputs are the basis of every cross-language correctness
+# check, so they must survive the *.npz / *.bin rules in section 1.
+!shared/expected_outputs/**
+!shared/configs/**
+!experiments/results.csv
+# Note: a negation cannot resurrect a file inside an ignored *directory*
+# (e.g. experiments/raw/). Only file-pattern matches can be negated.
+
+# -----------------------------------------------------------------------------
+# 3. PYTHON
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+.python-version
+
+# Tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.hypothesis/
+
+# Notebooks
+.ipynb_checkpoints/
+notebooks/**/*-checkpoint.ipynb
+
+# -----------------------------------------------------------------------------
+# 4. RUST
+# -----------------------------------------------------------------------------
+target/
+rust/target/
+**/*.rs.bk
+*.pdb
+Cargo.lock.orig
+
+# Criterion benchmark output — regenerable, and large
+rust/target/criterion/
+criterion/
+
+# Keep Cargo.lock: this repo produces binaries, and reproducible benchmark
+# builds depend on pinned dependency versions.
+!Cargo.lock
+
+# -----------------------------------------------------------------------------
+# 5. macOS / EDITORS
+# -----------------------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# -----------------------------------------------------------------------------
+# 6. SECRETS
+# -----------------------------------------------------------------------------
+*.pem
+*.key
+secrets.toml
+.envrc
+.secrets/

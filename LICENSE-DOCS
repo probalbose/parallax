@@ -1,0 +1,94 @@
+Parallax — Documentation and Written Material Licence
+=====================================================
+
+SPDX-License-Identifier: CC-BY-NC-ND-4.0
+
+Copyright (c) 2026 Probal Bose. All rights not expressly granted are reserved.
+
+The written material in this repository is licensed under the Creative Commons
+Attribution-NonCommercial-NoDerivatives 4.0 International Public License
+("CC BY-NC-ND 4.0").
+
+Full legal code:
+    https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+Human-readable summary (not a substitute for the licence):
+    https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+
+-----------------------------------------------------------------------------
+WHAT THIS COVERS
+-----------------------------------------------------------------------------
+
+Prose, in any file format, including:
+
+  * README.md and any other Markdown narrative
+  * reports/            weekly written conclusions and analysis
+  * docs/               curriculum text, lab briefs, methodology
+  * notebooks/          Markdown cells and written commentary
+  * figures, plots and diagrams authored for this project
+
+It does NOT cover:
+
+  * Source code                     -> Apache-2.0, see LICENSE
+  * Synthetic datasets and results  -> CC0-1.0, see LICENSE-DATA
+  * Third-party models and weights  -> their own licences, see NOTICE
+
+Where a file mixes prose and code — a notebook, or a Markdown document
+containing code listings — the code listings are Apache-2.0 and the
+surrounding prose is CC BY-NC-ND 4.0. Code listings may be copied, modified
+and used commercially without restriction.
+
+
+-----------------------------------------------------------------------------
+IN PLAIN TERMS
+-----------------------------------------------------------------------------
+
+You may:
+  * read, copy, and share this material, in whole or in part
+  * quote it with attribution
+  * use it to learn, teach yourself, or run a study group
+
+You may not, without separate written permission:
+  * sell it, or include it in a paid product, course or publication
+  * publish a modified or translated version
+
+This material is drafted toward a book. Commercial and derivative rights are
+reserved for that purpose. If you want to do something the licence does not
+permit — a translation, a course, an excerpt in a commercial publication —
+ask. Permission is often granted; it just has to be asked for.
+
+
+-----------------------------------------------------------------------------
+ADDITIONAL PERMISSION FOR CONTRIBUTORS AND FORKS
+-----------------------------------------------------------------------------
+
+Strictly read, the NoDerivatives term would prevent you from editing a README
+in a fork, which is not the intent. As copyright holder, the Licensor grants
+the following additional permission, which sits alongside CC BY-NC-ND 4.0 and
+does not modify it:
+
+  You may reproduce, modify and Share modified documentation to the extent
+  reasonably necessary to use, build, test, port, package, document or
+  contribute to the source code in this repository — including in a fork,
+  a pull request, or a downstream distribution of the software.
+
+  This additional permission does not extend to Sharing the narrative or
+  analytical prose (in particular the contents of reports/ and any chapter
+  material) as a standalone work, whether modified or not.
+
+In short: fork the repo and edit its docs freely. Do not republish the writing
+as writing.
+
+
+-----------------------------------------------------------------------------
+ATTRIBUTION
+-----------------------------------------------------------------------------
+
+Suggested attribution string:
+
+  "Parallax" by Probal Bose, licensed under CC BY-NC-ND 4.0.
+  https://github.com/probalbose/parallax
+
+No warranties are given. The licence may not give you all of the permissions
+necessary for your intended use — other rights such as publicity, privacy or
+moral rights may limit how you use the material.

@@ -1,0 +1,88 @@
+Parallax
+Copyright (c) 2026 Probal Bose
+
+This product includes software developed by Probal Bose.
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not
+use this file except in compliance with the License. You may obtain a copy of
+the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+License for the specific language governing permissions and limitations under
+the License.
+
+
+-----------------------------------------------------------------------------
+LICENCE MAP
+-----------------------------------------------------------------------------
+
+  Source code (python/, rust/, scripts/)  Apache-2.0        LICENSE
+  Documentation, reports, prose           CC BY-NC-ND 4.0   LICENSE-DOCS
+  Synthetic datasets and results          CC0-1.0           LICENSE-DATA
+  Model weights and adapters              NOT INCLUDED      see below
+  Book manuscript                         NOT INCLUDED      separate private repo
+
+The written material is deliberately more restrictive than the code. It is
+drafted toward a book, so commercial and derivative rights in the prose are
+reserved. The code is fully permissive and carries no such restriction — take
+it, modify it, sell what you build with it.
+
+LICENSE-DOCS grants an additional permission allowing contributors and forks
+to modify documentation as needed to work with the software, so the
+NoDerivatives term does not obstruct normal open-source use.
+
+
+-----------------------------------------------------------------------------
+THIRD-PARTY MODELS AND WEIGHTS — IMPORTANT
+-----------------------------------------------------------------------------
+
+This repository contains NO pretrained model weights, tokenizers, or trained
+adapter files. They are excluded by .gitignore and must be obtained by the
+user directly from their respective sources under their respective licences.
+
+The licences in this repository do NOT extend to any model artefact you
+download or produce by running this code.
+
+In particular:
+
+  * Any LoRA/QLoRA adapter trained against a Meta Llama base model is a
+    derivative of that model and remains subject to the Llama Community
+    Licence applicable to that version — including its Acceptable Use Policy,
+    its monthly-active-user threshold, and its requirement that the names of
+    derivative models begin with "Llama". Such adapters CANNOT be
+    redistributed under Apache-2.0, CC BY-NC-ND 4.0 or CC0.
+
+  * Adapters trained against permissively licensed base models (for example
+    Qwen2.5 or SmolLM2, both Apache-2.0) inherit those base licences instead.
+    Check the specific model card before redistributing anything.
+
+  * Tokenizers and configuration files distributed with a model are covered by
+    that model's licence, not by this repository's licences.
+
+If you publish a trained adapter, state its base model and that base model's
+licence explicitly. Do not assume this repository's terms carry over.
+
+
+-----------------------------------------------------------------------------
+THIRD-PARTY DEPENDENCIES
+-----------------------------------------------------------------------------
+
+This project builds against third-party libraries that are not distributed
+here and remain under their own licences, including but not limited to MLX and
+MLX-LM (Apache-2.0), Burn (MIT / Apache-2.0), Ollama (MIT), Axum (MIT), Tokio
+(MIT), Serde (MIT / Apache-2.0), NumPy (BSD-3-Clause) and Matplotlib (PSF-based
+licence). Consult each project for authoritative terms.
+
+
+-----------------------------------------------------------------------------
+TRADEMARKS
+-----------------------------------------------------------------------------
+
+"Parallax" is used here as a project name only. This repository is not
+affiliated with, endorsed by, or sponsored by any organisation whose products
+or trademarks are referenced, including Apple, Meta, Alibaba, Hugging Face or
+the Ollama project.
