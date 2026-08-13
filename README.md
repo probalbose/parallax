@@ -1,5 +1,8 @@
 # Parallax
 
+> **Status:** early-stage, open for contributors. The first release establishes
+> the Lab 00 baseline and the public project contract.
+
 **A paired Python–Rust laboratory for measuring what LLM training actually costs on real hardware.**
 
 Every experiment is implemented twice, because one measurement is a number and two are a conclusion.
@@ -27,6 +30,9 @@ Roughly:
 | 11–12 | Rust training supervisor, Ollama serving and API performance |
 
 Every week produces code, measurements and a written conclusion. The written conclusion is not optional — it is the deliverable that distinguishes this from a tutorial.
+
+The public roadmap turns this programme into small, reviewable milestones. See
+[`ROADMAP.md`](ROADMAP.md) for the twelve labs and their definition of done.
 
 ## Layout
 
@@ -108,3 +114,47 @@ Add the SPDX identifier at the top of each file:
 ---
 
 Copyright © 2026 Probal Bose.
+
+## Quick start: Lab 00
+
+Lab 00 is the cross-language hardware and process observer. It establishes the
+first shared schema, tests, and comparison workflow used by every later lab.
+
+```bash
+# Python 3.11+
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install -e "./python[dev]"
+python python/src/parallax_lab/hardware_snapshot.py
+
+# Rust stable
+cargo run --manifest-path rust/Cargo.toml --release --bin hardware_snapshot
+
+# Run both and record one comparable result.
+python scripts/compare_snapshots.py
+```
+
+The comparison script appends a compact record to `experiments/results.csv`.
+Run it at least three times before drawing a conclusion.
+
+## Contributing and project rules
+
+Contributions are welcome, especially a small, well-evidenced lab improvement.
+Please read these before opening an issue or pull request:
+
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) — development, experiment, and PR rules
+- [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) — community expectations
+- [`SECURITY.md`](SECURITY.md) — private vulnerability reporting
+- [`GOVERNANCE.md`](GOVERNANCE.md) — maintainer decisions and release authority
+- [`RELEASING.md`](RELEASING.md) — versioning, tags, and release process
+
+Issues and pull requests use templates that ask for the evidence needed to
+evaluate a performance claim. A benchmark change without a reproducible config,
+raw-enough summary, and written interpretation is incomplete by design.
+
+## Releases
+
+Parallax follows [Semantic Versioning](https://semver.org/). Releases are
+signed annotated tags named `vMAJOR.MINOR.PATCH`; a pushed tag creates the
+corresponding GitHub release and release notes. The initial project baseline is
+`v0.1.0`.

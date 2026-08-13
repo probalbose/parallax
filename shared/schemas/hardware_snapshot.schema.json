@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Parallax Lab 00 hardware snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["language", "logical_cpus", "total_memory_bytes", "available_memory_bytes", "process_memory_bytes", "disk_free_bytes", "elapsed_ms"],
+  "properties": {
+    "language": {"type": "string", "enum": ["python", "rust"]},
+    "logical_cpus": {"type": "integer", "minimum": 1},
+    "total_memory_bytes": {"type": "integer", "exclusiveMinimum": 0},
+    "available_memory_bytes": {"type": "integer", "minimum": 0},
+    "process_memory_bytes": {"type": "integer", "exclusiveMinimum": 0},
+    "disk_free_bytes": {"type": "integer", "exclusiveMinimum": 0},
+    "elapsed_ms": {"type": "integer", "minimum": 0}
+  }
+}

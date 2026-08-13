@@ -1,0 +1,26 @@
+name: Lab or experiment proposal
+description: Propose a lab, measurement method, or substantial change.
+title: "lab: "
+labels: [proposal]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Systems question
+      description: What should this lab establish?
+    validations:
+      required: true
+  - type: textarea
+    id: design
+    attributes:
+      label: Paired implementation and experiment design
+      description: Define the shared inputs, variables, metric collection, and correctness check.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Expected evidence
+      description: State the config, required runs, result format, and written conclusion.
+    validations:
+      required: true

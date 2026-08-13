@@ -1,0 +1,6 @@
+{
+  "experiment_id": "lab00-hardware-snapshot",
+  "seed": 42,
+  "runs": 3,
+  "notes": "Measure a quiet system where possible; compare output schema before timing."
+}
